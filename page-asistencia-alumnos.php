@@ -102,8 +102,8 @@ if (!isset($_SESSION['usuario'])) {
                                             <p class="caption">
                                                 En este panel usted podra realizar la asistencia de alumnos en los respectivos grupos de los cursos
                                                 <br><?php
-                                                print_r($res);
-                                                echo $buscar;
+//                                                print_r($res);
+//                                                echo $buscar;
                                                 ?>
                                             </p>
                                             <div class="divider"></div>
@@ -205,7 +205,7 @@ if (!isset($_SESSION['usuario'])) {
                             <div id="modal1" class="modal">
                                 <div class="modal-content">
                                     <h4 class="red-text">ERROR!!!</h4>
-                                    <p>Stock insuficiente</p>
+                                    <p>Intente de nuevo</p>
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
@@ -244,7 +244,7 @@ if (!isset($_SESSION['usuario'])) {
             <!-- //////////////////////////////////////////////////////////////////////////// -->
 
             <!-- START FOOTER -->
-    <?php include 'inc/footer.inc'; ?>
+            <?php include 'inc/footer.inc'; ?>
             <!-- END FOOTER -->
 
 
@@ -268,7 +268,6 @@ if (!isset($_SESSION['usuario'])) {
 
             <script>
                                                                             var contador = <?php echo $cont; ?>;
-                                                                            ;
 
                                                                             $(document).ready(function () {
 
@@ -282,65 +281,28 @@ if (!isset($_SESSION['usuario'])) {
 
 
 
-    //                                                                        var frm = $('#create');
-    //
-    //                                                                        frm.submit(function (ev) {
-    //                                                                            ev.preventDefault();
-    //                                                                        });
+                                                                            var frm = $('#create');
 
-
-
-                                                                            function registrar() {
-                                                                                $res = "ok";
-                                                                                var cursodet = "<?php echo $id; ?>"
-
-                                                                                var alumnos = contador;
-                                                                                for (var i = 0; i < alumnos; i++) {
-                                                                                    $tempal = "alumno".concat(i);
-
-                                                                                    $alumno = $('#' + $tempal);
-                                                                                    $url = "control/asistenciaAlumnos.php?asistencia=" + cursodet + "&alumno=" + $alumno.text();
-                                                                                    console.log($url);
-                                                                                    $.ajax({
-                                                                                        type: 'GET',
-                                                                                        url: $url,
-                                                                                        async: false,
-
-                                                                                        success: function (respuesta) {
-                                                                                            if (respuesta == "1") {
-                                                                                                console.log("oli");
-                                                                                            } else {
-                                                                                                console.log("no");
-                                                                                                $res = "no";
-                                                                                            }
-                                                                                        }
-                                                                                    });
-                                                                                }
-                                                                                if ($res == "ok") {
-                                                                                    $('#modal2').openModal();
-                                                                                } else {
-                                                                                    $('#modal5').openModal();
-                                                                                }
-                                                                            }
-
-                                                                            function cambiar() {
-                                                                                $alumno = $('#codigo').val();
-                                                                                $('#codigo').attr('readonly', 'true');
-                                                                                $('#nombretag').attr('class', 'active');
-                                                                                $('#apellidotag').attr('class', 'active');
-                                                                                $url = "control/buscarAlumno.php?codigo=".concat($alumno);
+                                                                            frm.submit(function (ev) {
+                                                                                ev.preventDefault();
                                                                                 $.ajax({
-                                                                                    dataType: "json",
-                                                                                    type: "GET",
-                                                                                    url: $url,
+                                                                                    type: frm.attr('method'),
+                                                                                    url: frm.attr('action'),
+                                                                                    data: frm.serialize(),
                                                                                     success: function (respuesta) {
+                                                                                        if (respuesta == 1) {
+                                                                                            $('#modal2').openModal();
+                                                                                            //document.location.href = "page-crear-proveedor.php";
+                                                                                        } else {
 
-                                                                                        $('#nombre').val(respuesta["nombre"]);
-                                                                                        $('#apellido').val(respuesta["apellido"]);
+                                                                                            $('#modal1').openModal();
+                                                                                        }
                                                                                     }
                                                                                 });
-                                                                                $('#cantidad').focus();
-                                                                            }
+                                                                            });
+
+
+
 
             </script>
         </body>

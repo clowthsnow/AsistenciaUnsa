@@ -92,8 +92,8 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <th>Semestre</th>
                                                                         <th>Docente</th>
                                                                         <th>Aula</th>
-                                                                        <th>Alumnos</th>
                                                                         <th>Asistencia</th>
+                                                                        <th>Alumnos</th>
                                                                         <th>Configurar</th>
                                                                         <th>Eliminar</th>
                                                                     </tr>
@@ -106,8 +106,8 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <th>Semestre</th>
                                                                         <th>Docente</th>
                                                                         <th>Aula</th>
-                                                                        <th>Alumnos</th>
                                                                         <th>Asistencia</th>
+                                                                        <th>Alumnos</th>
                                                                         <th>Configurar</th>
                                                                         <th>Eliminar</th>
                                                                     </tr>
@@ -133,8 +133,8 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <td>" , $row['AulaUbicacion']." ".$row['AulaNumero']."</td>";
                                                                         
                                                                         
-                                                                        echo "<td><a href=\"page-asistencia-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat cyan\">Asignar</span></a></td>"
-                                                                                . " <td><a href=\"page-asignar-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat cyan\">Asignar</span></a></td>"
+                                                                        echo "<td><a href=\"page-asistencia-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat green\">Asistencia</span></a></td>"
+                                                                                . " <td><a href=\"page-asignar-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat orange\">Asignar</span></a></td>"
                                                                                 . "<td><a href=\"page-configurar-plan.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat cyan\">Configurar</span></a></td>
                                                                         <td><a href=\"control/eliminarPlan.php?id=" . $row['CursoDetalleId'] . "\" class=\"delete\"><span class=\"task-cat red\">Eliminar</span></a></td>
                                                                         </tr>";
