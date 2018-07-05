@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario'])) {
         if ($usuario['UsuarioEstReg'] === "A") {
             $_SESSION['usuario'] = $usuario['UsuarioId'];
             $nombres = $usuario['UsuarioNombre'] . ' ' . $usuario['UsuarioApellido'];
-            $_SESSION['UsuarioNombres'] = $nombres;
+            $_SESSION['usuarioNombres'] = $nombres;
             $_SESSION['permisos'] = $usuario['UsuarioTipo'];
             
             header("location:../index.php");

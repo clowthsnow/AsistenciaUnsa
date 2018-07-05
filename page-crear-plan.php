@@ -70,9 +70,9 @@ if (!isset($_SESSION['usuario'])) {
                                 <div class="col s12 m12 l12">
                                     <div class="section">
                                         <div id="roboto">
-                                            <h4 class="header">Creación de Nuevos Licores y Bebidas</h4>
+                                            <h4 class="header">Creación de Nuevos Planes de Estudio</h4>
                                             <p class="caption">
-                                                En este panel usted podra crear nuevos licores y bebidas con los que cuenta en el almacen.
+                                                En este panel usted podra crear nuevos Planes de Estudio para la Escula Profesional.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="row">

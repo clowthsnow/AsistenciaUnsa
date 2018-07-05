@@ -63,7 +63,7 @@ if (!isset($_SESSION['usuario'])) {
                                     <div class="col s12 m12 l12">
                                         <h5 class="breadcrumbs-title">Configurar Plan</h5>
                                         <ol class="breadcrumb">
-                                            <li class=" grey-text lighten-4">Gestion de Curso
+                                            <li class=" grey-text lighten-4">Gestion de Escuela
                                             </li>
                                             <li class="grey-text lighten-4" >Ver Planes</li>
                                             <li class="active blue-text">Configurar Plan</li>
@@ -83,7 +83,7 @@ if (!isset($_SESSION['usuario'])) {
                                         <div id="roboto">
                                             <h4 class="header">Configuracion de Planes</h4>
                                             <p class="caption">
-                                                En este panel usted podra hacer la configuracion de los licores y bebidas, como cambiar nombre y categoria.
+                                                En este panel usted podra hacer la configuracion de los planes.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="row">
