@@ -85,31 +85,31 @@ if (!isset($_SESSION['usuario'])) {
 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="dni" type="text" class="validate" name="dni" required="">
+                                                                        <input id="dni" type="text" class="validate" name="dniDirector" required="">
                                                                         <label for="dni">DNI:</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="nombre" type="text" class="validate" name="nombre" required="">
+                                                                        <input id="nombre" type="text" class="validate" name="nombreDirector" required="">
                                                                         <label for="nombre">Nombre:</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="apellido" type="text" class="validate" name="apellido" required="">
+                                                                        <input id="apellido" type="text" class="validate" name="apellidoDirector" required="">
                                                                         <label for="apellido">Apellido:</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="telefono" type="text" class="validate" name="telefono" required="">
+                                                                        <input id="telefono" type="text" class="validate" name="telefonoDirector" required="">
                                                                         <label for="telefono">Telefono:</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="email" type="text" class="validate" name="email" required="">
+                                                                        <input id="email" type="text" class="validate" name="emailDirector" required="">
                                                                         <label for="email">Email:</label>
                                                                     </div>
                                                                 </div>
