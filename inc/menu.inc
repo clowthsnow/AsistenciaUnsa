@@ -69,6 +69,18 @@ if ('1' == $_SESSION['permisos']) {
                         </div>
                     </li>
                     
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Aula</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-aula.php">Crear Nueva Aula</a>
+                                </li>                                        
+                                <li><a href="page-ver-aula.php">Ver aula</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Deposito</a>
                         <div class="collapsible-body">
                             <ul>

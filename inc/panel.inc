@@ -60,6 +60,19 @@ if ('1'== $_SESSION['permisos']) {
             </div>
             
             <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Aula</span>
+                        <p>Crea u observa al aula.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-aula.php" class="lime-text text-accent-1">Crear Aula</a>
+                        <a href="page-ver-aula.php" class="lime-text text-accent-1">Ver Aula</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s6 m4 l4">
                 <div class="card  light-green">
                     <div class="card-content white-text">
                         <span class="card-title">Licores</span>
