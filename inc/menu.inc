@@ -34,7 +34,18 @@ if ('1' == $_SESSION['permisos']) {
                         </div>
                     </li>
                       <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Cursos</a>
-=======
+          
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Director</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-director.php">Crear Nuevo Director</a>
+                                </li>                                        
+                                <li><a href="page-ver-director.php">Ver Director</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </li>
                     
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Director</a>
                         <div class="collapsible-body">
@@ -48,22 +59,7 @@ if ('1' == $_SESSION['permisos']) {
                         </div>
                     </li>
                     
-<<<<<<< Mario
-=======
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Director</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-director.php">Crear Nuevo Director</a>
-                                </li>                                        
-                                <li><a href="page-ver-director.php">Ver Director</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </li>
-                    
->>>>>>> master
-                    
+  
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Secretaria</a>
                         <div class="collapsible-body">
                             <ul>
