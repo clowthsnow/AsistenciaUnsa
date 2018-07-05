@@ -12,7 +12,7 @@ $email = $_POST['emailsecretaria'];
 if (!isset($id) || !isset($nombre) || !isset($ape) || !isset($telefono) || !isset($email) ) {
     header("location:../page-ver-secretaria.php");
 }
-$actualiza="UPDATE secretaria SET SecretariaNombre='$nombre , SecretariaApellido='$ape' , SecretariaCorreo='$email',SecretariaTelefono='$telefono' WHERE DirectorDni='$id'";
+$actualiza="UPDATE secretaria SET SecretariaNombre='$nombre' , SecretariaApellido='$ape' , SecretariaCorreo='$email',SecretariaTelefono='$telefono' WHERE SecretariaDni='$id'";
 if($conexion->query($actualiza) === TRUE){
     echo '1';
 }else{

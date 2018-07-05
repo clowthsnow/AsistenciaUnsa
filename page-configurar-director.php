@@ -90,7 +90,7 @@ if (!isset($_SESSION['usuario'])) {
                                                 <!-- Form with validation -->
                                                 <div class="col offset-l2 s12 m12 l8">
                                                     <div class="card-panel">
-                                                        <h4 class="header2">Director: <?php echo $provBD['DirectorNombre']; ?></h4>
+                                                        <h4 class="header2">Director: <?php echo $provBD['DirectorDni']; ?></h4>
                                                         <div class="row">
                                                             <form id="configurar" class="col s12" action="control/modificarDirector.php" method="POST">
                                                                 <div class="row">

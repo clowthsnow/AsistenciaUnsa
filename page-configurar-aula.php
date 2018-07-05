@@ -8,20 +8,28 @@ if (!isset($_SESSION['usuario'])) {
     include 'conexion.php';
     $id = $_GET['id'];
     if (!isset($id)) {
-        header("location:page-ver-secretaria.php");
+        header("location:page-ver-aula.php");
     }
-    $buscar = "SELECT * FROM secretaria WHERE SecretariaDni='$id'";
+    $buscar = "SELECT * FROM aula WHERE AulaId='$id'";
     $resultado = $conexion->query($buscar);
     if ($resultado->num_rows === 0) {
-        header("location:page-ver-secretaria.php");
+        header("location:page-ver-aula.php");
     }
     $provBD = $resultado->fetch_assoc();
+    
+    $buscarEsc = "SELECT * FROM escuela";
+    $resultEsc = $conexion->query($buscarEsc);
+   
     ?>
+
+
+
+
     <!DOCTYPE html>
     <html lang="es">
 
         <head>
-            <title>Configurar Secretaria</title>
+            <title>Configurar Aula</title>
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <!-- Favicons-->
@@ -61,12 +69,12 @@ if (!isset($_SESSION['usuario'])) {
                             <div class="container">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
-                                        <h5 class="breadcrumbs-title">Configurar Secretaria</h5>
+                                        <h5 class="breadcrumbs-title">Configurar Aula</h5>
                                         <ol class="breadcrumb">
-                                            <li class=" grey-text lighten-4">Gestion de Secretaria
+                                            <li class=" grey-text lighten-4">Gestion de Aula
                                             </li>
-                                            <li class="grey-text lighten-4" >Ver Secretaria</li>
-                                            <li class="active blue-text">Configurar Secretaria</li>
+                                            <li class="grey-text lighten-4" >Ver Aula</li>
+                                            <li class="active blue-text">Configurar Aula</li>
                                         </ol>
 
                                     </div>
@@ -81,56 +89,59 @@ if (!isset($_SESSION['usuario'])) {
                                 <div class="col s12 m12 l12">
                                     <div class="section">
                                         <div id="roboto">
-                                            <h4 class="header">Configuracion de Secretaria</h4>
+                                            <h4 class="header">Configuracion de Aula</h4>
                                             <p class="caption">
-                                                En este panel usted podra hacer la configuracion de la secretaria.
+                                                En este panel usted podra hacer la configuracion del aula.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="row">
                                                 <!-- Form with validation -->
                                                 <div class="col offset-l2 s12 m12 l8">
                                                     <div class="card-panel">
-                                                        <h4 class="header2">Secretaria: <?php echo $provBD['SecretariaNombre']; ?></h4>
+                                                        <h4 class="header2">Aula: <?php echo $provBD['AulaId']; ?></h4>
                                                         <div class="row">
-                                                            <form id="configurar" class="col s12" action="control/modificarSecretaria.php" method="POST">
+                                                            <form id="configurar" class="col s12" action="control/modificarAula.php" method="POST">
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="username" type="text" class="validate" name="id" required="" hidden="true" value="<?php echo $provBD['SecretariaDni']; ?>">
+                                                                        <input id="username" type="text" class="validate" name="id" required="" hidden="true" value="<?php echo $provBD['AulaId']; ?>">
 
                                                                     </div>
                                                                 </div>
                                                                 
-                                                                <div class="row">
-                                                                    <div class="input-field col s12">
-                                                                        <input id="nombre" type="text" class="validate" name="nombresecretaria" required="" value="<?php echo $provBD['SecretariaNombre']; ?>">
-                                                                        <label class="active" for="nombre">Nombre:</label>
+                                                                <div class="col s12 m6 l6">
+                                                                        <label >Escuela:</label>
+                                                                        <select id="esc" class="browser-default" name="aulaescuela" required="">
+                                                                            <option value="" disabled selected>Selecciona</option>
+                                                                            <?php while ($row = $resultEsc->fetch_assoc()) { ?>
+                                                                                <option value="<?php echo $row['EscuelaId']; ?>"><?php echo $row['EscuelaNombre']; ?></option>
+                                                                            <?php }
+                                                                            ?>
+
+                                                                        </select>
                                                                     </div>
-                                                                </div>
-                                                                
-                                                                <div class="row">
-                                                                    <div class="input-field col s12">
-                                                                        <input id="apellido" type="text" class="validate" name="apellidosecretaria" required="" value="<?php echo $provBD['SecretariaApellido']; ?>">
-                                                                        <label class="active" for="apellido">Apellido:</label>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="row">
-                                                                    <div class="input-field col s12">
-                                                                        <input id="email" type="text" class="validate" name="emailsecretaria" required="" value="<?php echo $provBD['SecretariaCorreo']; ?>">
-                                                                        <label class="active" for="email">Correo:</label>
-                                                                    </div>
-                                                                </div>
                                                                 
                                                                 </div>
                                                                 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="telefono" type="text" class="validate" name="telefonosecretaria" required="" value="<?php echo $provBD['SecretariaTelefono']; ?>">
-                                                                        <label class="active" for="telefono">Telefono:</label>
+                                                                        <input id="numero" type="text" class="validate" name="numeroaula" required="" value="<?php echo $provBD['AulaNumero']; ?>">
+                                                                        <label class="active" for="numero">Numero de aula:</label>
                                                                     </div>
                                                                 </div>
                                                                 
-                                                                                                                                <br>
+                                                                                                                             
+                                                                <div class="row">
+                                                                    <div class="input-field col s12">
+                                                                        <input id="ubi" type="text" class="validate" name="ubicacionaula" required="" value="<?php echo $provBD['AulaUbiacion']; ?>">
+                                                                        <label class="active" for="ubi">Ubicacion:</label>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                
+                                                        
+                                                                
+                                                                
+                                                                <br>
                                                                 <div class="divider"></div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
@@ -156,17 +167,17 @@ if (!isset($_SESSION['usuario'])) {
                         <div id="modal1" class="modal">
                             <div class="modal-content">
                                 <h4 class="green-text">EXITO!!!</h4>
-                                <p> Dato modificado correctamente.</p>
+                                <p> Escuela modificada correctamente.</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="page-ver-secretaria.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                <a href="page-ver-escuela.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                         <!--modal error-->
                         <div id="modal2" class="modal">
                             <div class="modal-content">
                                 <h4 class="red-text">ERROR!!!</h4>
-                                <p>El dato no puede ser modificado, intentelo de nuevo.</p>
+                                <p>La escuela no pudo ser modificada, intentelo de nuevo.</p>
                             </div>
                             <div class="modal-footer">
                                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>

@@ -12,7 +12,7 @@ $email = $_POST['emaildirector'];
 if (!isset($id) || !isset($nombre) || !isset($ape) || !isset($telefono) || !isset($email) ) {
     header("location:../page-ver-director.php");
 }
-$actualiza="UPDATE director SET DirectorNombre='$nombre , DirectorApellido='$ape' , DirectorTelefono='$telefono', DirectorEmail='$email' WHERE DirectorDni='$id'";
+$actualiza="UPDATE director SET DirectorNombre='$nombre' , DirectorApellido='$ape' , DirectorTelefono='$telefono', DirectorEmail='$email' WHERE DirectorDni='$id'";
 if($conexion->query($actualiza) === TRUE){
     echo '1';
 }else{
