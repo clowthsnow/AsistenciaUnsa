@@ -116,20 +116,21 @@ if (!isset($_SESSION['usuario'])) {
                                                                 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="telefono" type="text" class="validate" name="telefonosecretaria" required="" value="<?php echo $provBD['SecretariaTelefono']; ?>">
-                                                                        <label class="active" for="telefono">Telefono:</label>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="row">
-                                                                    <div class="input-field col s12">
                                                                         <input id="email" type="text" class="validate" name="emailsecretaria" required="" value="<?php echo $provBD['SecretariaCorreo']; ?>">
                                                                         <label class="active" for="email">Correo:</label>
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 </div>
-                                                                <br>
+                                                                
+                                                                <div class="row">
+                                                                    <div class="input-field col s12">
+                                                                        <input id="telefono" type="text" class="validate" name="telefonosecretaria" required="" value="<?php echo $provBD['SecretariaTelefono']; ?>">
+                                                                        <label class="active" for="telefono">Telefono:</label>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                                                                                <br>
                                                                 <div class="divider"></div>
                                                                 <div class="row">
                                                                     <div class="input-field col s12">

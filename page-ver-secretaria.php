@@ -119,7 +119,7 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <td>" . $row['SecretariaNombre'] . "</td>
                                                                         <td>" . $row['SecretariaApellido'] . "</td>
                                                                         <td>" . $row['SecretariaCorreo'] . "</td>
-                                                                        <td>" . $row['DirectorTelefono'] . "</td>";
+                                                                        <td>" . $row['SecretariaTelefono'] . "</td>";
                                                                         
                                                                         
                                                                         echo "<td><a href=\"page-configurar-secretaria.php?id=" . $row['SecretariaDni'] . "\"><span class=\"task-cat cyan\">Configurar</span></a></td>
