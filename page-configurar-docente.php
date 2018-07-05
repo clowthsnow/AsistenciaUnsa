@@ -6,16 +6,22 @@ if (!isset($_SESSION['usuario'])) {
     header("location:index.php");
 } else {
     include 'conexion.php';
-    $buscarDir = "SELECT * FROM director";
-    $resultDir = $conexion->query($buscarDir);
-    $buscarSec = "SELECT * FROM secretaria";
-    $resultSec = $conexion->query($buscarSec);
+    $id = $_GET['id'];
+    if (!isset($id)) {
+        header("location:page-ver-docentes.php");
+    }
+    $buscar = "SELECT * FROM docente WHERE DocenteDni='$id'";
+    $resultado = $conexion->query($buscar);
+    if ($resultado->num_rows === 0) {
+        header("location:page-ver-docentes.php");
+    }
+    $provBD = $resultado->fetch_assoc();
     ?>
     <!DOCTYPE html>
     <html lang="es">
 
         <head>
-            <title>Crear Escuela</title>
+            <title>Configurar Docente</title>
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <!-- Favicons-->
@@ -55,12 +61,12 @@ if (!isset($_SESSION['usuario'])) {
                             <div class="container">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
-                                        <h5 class="breadcrumbs-title">Crear Escuela</h5>
+                                        <h5 class="breadcrumbs-title">Configurar Docentes</h5>
                                         <ol class="breadcrumb">
-                                            <li class=" grey-text lighten-4">Gestion de Escuela
+                                            <li class=" grey-text lighten-4">Gestion de Docente
                                             </li>
-                                            <li class="active blue-text" >Crear Escuela</li>
-
+                                            <li class="grey-text lighten-4" >Ver Docentes</li>
+                                            <li class="active blue-text">Configurar Docente</li>
                                         </ol>
 
                                     </div>
@@ -75,75 +81,60 @@ if (!isset($_SESSION['usuario'])) {
                                 <div class="col s12 m12 l12">
                                     <div class="section">
                                         <div id="roboto">
-                                            <h4 class="header">Creación de Escuela</h4>
+                                            <h4 class="header">Configuracion de Docentes</h4>
                                             <p class="caption">
-                                                En este panel usted podra crear los datos de la Escuela.
+                                                En este panel usted podra hacer la configuracion de los docentes, como cambiar nombre y categoria.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="row">
                                                 <!-- Form with validation -->
                                                 <div class="col offset-l2 s12 m12 l8">
                                                     <div class="card-panel">
-                                                        <h4 class="header2">Nueva Escuela</h4>
+                                                        <h4 class="header2">DNI: <?php echo $provBD['DocenteDni']; ?></h4>
                                                         <div class="row">
-                                                            <form id="create" class="col s12" action="control/crearEscuela.php" method="POST">
-                                                                
+                                                            <form id="configurar" class="col s12" action="control/modificarDocente.php" method="POST">
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
+                                                                        <input id="username" type="text" class="validate" name="id" required="" hidden="true" value="<?php echo $provBD['DocenteDni']; ?>">
 
-                                                                        <input id="cod" type="text" class="validate" name="codigoescuela" required="">
-                                                                        <label for="cod">Codigo: </label>
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-
-                                                                        <input id="prov" type="text" class="validate" name="nombreescuela" required="">
-                                                                        <label for="prov">Nombre: </label>
+                                                                        <input id="nombre" type="text" class="validate" name="docentenombre" required="" value="<?php echo $provBD['DocenteNombre']; ?>">
+                                                                        <label class="active" for="nombre">Nombre:</label>
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-
-                                                                        <input id="tel" type="text" class="validate" name="telefonoescuela" required="">
-                                                                        <label for="tel">Telefono: </label>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="row">
-                                                                    <div class="col s12 m12 l12">
-                                                                        <label>Director:</label>
-                                                                        <select id="director" class="browser-default" name="directorescuela" required="">
-                                                                            <option value="" disabled selected>Selecciona</option>
-                                                                            <?php while ($row = $resultDir->fetch_assoc()) { ?>
-                                                                                <option value="<?php echo $row['DirectorDni']; ?>"><?php echo $row['DirectorNombre']; ?></option>
-                                                                            <?php }
-                                                                            ?>
-
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="row">
-                                                                    <div class="col s12 m12 l12">
-                                                                        <label>Secretaria:</label>
-                                                                        <select id="secretaria" class="browser-default" name="secretariaescuela" required="">
-                                                                            <option value="" disabled selected>Selecciona</option>
-                                                                            <?php while ($row = $resultSec->fetch_assoc()) { ?>
-                                                                                <option value="<?php echo $row['SecretariaDni']; ?>"><?php echo $row['SecretariaNombre']; ?></option>
-                                                                            <?php }
-                                                                            ?>
-
-                                                                        </select>
+                                                                        <input id="nombre" type="text" class="validate" name="docenteapellido" required="" value="<?php echo $provBD['DocenteApellido']; ?>">
+                                                                        <label class="active" for="nombre">Apellido:</label>
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Registrar
-                                                                            <i class="mdi-image-edit left"></i>
+                                                                        <input id="nombre" type="text" class="validate" name="docentetelefono" required="" value="<?php echo $provBD['DocenteTelefono']; ?>">
+                                                                        <label class="active" for="nombre">Telefono:</label>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="row">
+                                                                    <div class="input-field col s12">
+                                                                        <input id="nombre" type="text" class="validate" name="docentecorreo" required="" value="<?php echo $provBD['DocenteCorreo']; ?>">
+                                                                        <label class="active" for="nombre">Correo:</label>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                </div>
+                                                                <br>
+                                                                <div class="divider"></div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s12">
+                                                                        <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Guardar Cambios
+                                                                            <i class="mdi-content-save left"></i>
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -158,28 +149,26 @@ if (!isset($_SESSION['usuario'])) {
                                 </div>
                             </div>
 
-
                         </div>
                         <!--end container-->
-
-                        <!--modal error-->
+                        <!--modal correcto-->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                                <h4 class="red-text">ERROR!!!</h4>
-                                <p>Escuela no creada correctamente.</p>
+                                <h4 class="green-text">EXITO!!!</h4>
+                                <p> Docente modificado correctamente.</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                <a href="page-ver-docentes.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                         <!--modal error-->
                         <div id="modal2" class="modal">
                             <div class="modal-content">
-                                <h4 class="green-text">EXITO!!!</h4>
-                                <p>Escuela creada correctamente.</p>
+                                <h4 class="red-text">ERROR!!!</h4>
+                                <p>El Docente no puedo ser modificado, intentelo de nuevo.</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="page-crear-escuela.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                     </section>
@@ -203,7 +192,7 @@ if (!isset($_SESSION['usuario'])) {
             <!-- //////////////////////////////////////////////////////////////////////////// -->
 
             <!-- START FOOTER -->
-            <?php include 'inc/footer.inc'; ?>
+    <?php include 'inc/footer.inc'; ?>
             <!-- END FOOTER -->
 
 
@@ -212,7 +201,8 @@ if (!isset($_SESSION['usuario'])) {
             ================================================ -->
 
             <!-- jQuery Library -->
-            <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+            <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>  
+
             <!--materialize js-->
             <script type="text/javascript" src="js/materialize.js"></script>
             <!--scrollbar-->
@@ -224,11 +214,11 @@ if (!isset($_SESSION['usuario'])) {
             <script>
                 $(document).ready(function () {
                     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-                    $('input#ruc').characterCounter();
-                    $('#modal2').modal();
+                    
                     $('#modal1').modal();
+                    $('#modal2').modal();
                 });
-                var frm = $('#create');
+                var frm = $('#configurar');
 
                 frm.submit(function (ev) {
                     ev.preventDefault();
@@ -238,11 +228,10 @@ if (!isset($_SESSION['usuario'])) {
                         data: frm.serialize(),
                         success: function (respuesta) {
                             if (respuesta == 1) {
-                                $('#modal2').openModal();
-                                //document.location.href = "page-crear-producto.php";
+                                $('#modal1').openModal();
                             } else {
 
-                                $('#modal1').openModal();
+                                $('#modal2').openModal();
                             }
                         }
                     });
@@ -250,9 +239,15 @@ if (!isset($_SESSION['usuario'])) {
 
                 });
             </script>
+
         </body>
 
     </html>
     <?php
 }
 ?>
+
+
+
+
+
