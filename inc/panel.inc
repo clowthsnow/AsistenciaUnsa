@@ -32,6 +32,7 @@ if ('1'== $_SESSION['permisos']) {
                 </div>
             </div>
             
+                        
              <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
@@ -41,6 +42,19 @@ if ('1'== $_SESSION['permisos']) {
                     <div class="card-action">
                         <a href="page-crear-secretaria.php" class="lime-text text-accent-1">Crear Secretaria</a>
                         <a href="page-ver-secretaria.php" class="lime-text text-accent-1">Ver Secretaria</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Escuela</span>
+                        <p>Crea u observa a la escuela.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-escuela.php" class="lime-text text-accent-1">Crear Escuela</a>
+                        <a href="page-ver-escuela.php" class="lime-text text-accent-1">Ver Escuela</a>
                     </div>
                 </div>
             </div>
