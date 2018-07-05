@@ -53,7 +53,7 @@ if (!isset($_SESSION['usuario'])) {
                             <div class="container">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
-                                        <h5 class="breadcrumbs-title">Ver director</h5>
+                                        <h5 class="breadcrumbs-title">Ver Directores</h5>
                                         <ol class="breadcrumb">
                                             <li class=" grey-text lighten-4">Gestion de Director
                                             </li>
@@ -72,9 +72,9 @@ if (!isset($_SESSION['usuario'])) {
                                 <div class="col s12 m12 l12">
                                     <div class="section">
                                         <div id="roboto">
-                                            <h4 class="header">Ver Licores</h4>
+                                            <h4 class="header">Ver Director</h4>
                                             <p class="caption">
-                                                En este panel usted podra ver todos los Licores y Bebidas almacenadas en el sistema y poder gestionarlas.
+                                                En este panel usted podra ver todos los datos de los directores.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="container">
@@ -87,7 +87,7 @@ if (!isset($_SESSION['usuario'])) {
                                                             <table id="data-table-simple" class="responsive-table display " cellspacing="0">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>Codigo</th>
+                                                                        <th>DNI</th>
                                                                         <th>Nombre</th>
                                                                         <th>Apellido</th>
                                                                         <th>Telefono</th>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['usuario'])) {
 
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <th>Codigo</th>
+                                                                        <th>DNI</th>
                                                                         <th>Nombre</th>
                                                                         <th>Apellido</th>
                                                                         <th>Telefono</th>
@@ -111,7 +111,7 @@ if (!isset($_SESSION['usuario'])) {
 
                                                                 <tbody>
                                                                     <?php
-                                                                    $consultaUser = "SELECT * FROM director WHERE PlanEstReg='A'";
+                                                                    $consultaUser = "SELECT * FROM director WHERE DirectorEstReg='A'";
                                                                     $resultado = $conexion->query($consultaUser) or die($conexion->error);
                                                                     while ($row = $resultado->fetch_assoc()) {
                                                                         echo "<tr>
