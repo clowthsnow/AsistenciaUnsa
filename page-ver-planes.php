@@ -72,9 +72,9 @@ if (!isset($_SESSION['usuario'])) {
                                 <div class="col s12 m12 l12">
                                     <div class="section">
                                         <div id="roboto">
-                                            <h4 class="header">Ver Licores</h4>
+                                            <h4 class="header">Ver Planes de Estudios</h4>
                                             <p class="caption">
-                                                En este panel usted podra ver todos los Licores y Bebidas almacenadas en el sistema y poder gestionarlas.
+                                                En este panel usted podra ver todos los Planes de Estudio almacenadas en el sistema y poder gestionarlas.
                                             </p>
                                             <div class="divider"></div>
                                             <div class="container">

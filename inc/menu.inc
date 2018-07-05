@@ -22,23 +22,25 @@ if ('1' == $_SESSION['permisos']) {
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Usuarios</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="page-crear-usuario.php">Crear Nuevo Usuario</a>
+                                <li><a href="page-crear-usuario.php">Crear Nuevo Docente</a>
                                 </li>                                        
-                                <li><a href="page-ver-usuarios.php">Ver Usuarios</a>
+                                <li><a href="page-ver-usuarios.php">Ver Docentes</a>
                                 </li>
-                                <li><a href="page-ver-sistemas.php">Ver Sistemas</a>
+                                <li><a href="page-ver-sistemas.php">Crear Nuevo Estudiante</a>
+                                </li>
+                                <li><a href="page-ver-usuarios.php">Ver Estudiantes</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Deposito</a>
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Cursos</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="page-ingreso-mercaderia.php">Ingreso de Licores</a>
+                                <li><a href="page-crear-grupo.php">Crear nuevo grupo</a>
                                 </li>
-                                <li><a href="page-salida-mercaderia-notap.php">Salida de Licores</a>
+                                <li><a href="page-ver-grupos.php">Ver Grupos</a>
                                 </li>
-                                <li><a href="page-inventario.php">Inventario</a>
+                                <li><a href="page-inventario.php"></a>
                                 </li>
                                 <li><a href="page-consumo.php">Inventario</a>
                                 </li>
