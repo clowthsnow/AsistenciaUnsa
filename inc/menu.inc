@@ -19,44 +19,18 @@ if ('1' == $_SESSION['permisos']) {
             </li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Usuarios</a>
+
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Facultad</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="page-crear-estudiante.php">Crear Nuevo estudiante</a>
+                                <li><a href="page-crear-facultad.php">Crear Facultad</a>
                                 </li>                                        
-                                <li><a href="page-ver-estudiantes.php">Ver Estudiantes</a>
-                                </li>
-                                <li><a href="page-ver-sistemas.php">Ver Sistemas</a>
+                                <li><a href="page-ver-facultad.php">Ver Facultad</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Director</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-director.php">Crear Nuevo Director</a>
-                                </li>                                        
-                                <li><a href="page-ver-director.php">Ver Director</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Secretaria</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-secretaria.php">Crear Nueva Secretaria</a>
-                                </li>                                        
-                                <li><a href="page-ver-secretaria.php">Ver Secretaria</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </li>
-                    
+
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Escuela</a>
                         <div class="collapsible-body">
                             <ul>
@@ -64,72 +38,100 @@ if ('1' == $_SESSION['permisos']) {
                                 </li>                                        
                                 <li><a href="page-ver-escuela.php">Ver Escuela</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </li>
-                    
+
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Usuarios</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                
+                                <li><a href="page-crear-director.php">Crear Nuevo Director</a>
+                                </li>                                        
+                                <li><a href="page-ver-director.php">Ver Director</a>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                
+                                <li><a href="page-crear-secretaria.php">Crear Nueva Secretaria</a>
+                                </li>                                        
+                                <li><a href="page-ver-secretaria.php">Ver Secretaria</a>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                
+                                <li><a href="page-crear-docente.php">Crear Nuevo Docente</a>
+                                </li>                                        
+                                <li><a href="page-ver-docentes.php">Ver Docente</a>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                
+                                <li><a href="page-crear-estudiante.php">Crear Nuevo Estudiante</a>
+                                </li>                                        
+                                <li><a href="page-ver-estudiantes.php">Ver Estudiante</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Aula</a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="page-crear-aula.php">Crear Nueva Aula</a>
                                 </li>                                        
-                                <li><a href="page-ver-aula.php">Ver aula</a>
+                                <li><a href="page-ver-aula.php">Ver Aulas</a>
                                 </li>
-                                
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Curso</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-grupo.php">Crear Grupo</a>
-                                </li>
-                                <li><a href="page-ver-grupos.php">Ver Grupos</a>
-                                </li>
-                                <li><a href="page-inventario.php">Inventario</a>
-                                </li>
-                                <li><a href="page-consumo.php">Inventario</a>
-                                </li>
-                                <li><a href="page-ver-consumo.php">Inventario</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="pedido-mes.php">Pedido Mensual</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="page-ver-ingresoMercaderia.php">Ver Ingreso Licores</a>
-                                </li>
-                                <li><a href="page-ver-salidaMercaderia.php">Ver Salidas Licores </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="page-crear-licor.php">Crear Nuevo Licor</a>
-                                </li>    
-                                <li><a href="page-ver-licores.php">Ver Licores</a>
-                                </li> 
-                                <!--                                <li><a href="page-crear-producto.php">Crear Nuevo Producto</a>
-                                                                </li>  
-                                                                 
-                                                                <li><a href="page-ver-productos.php">Ver Productos</a>
-                                                                </li>-->
-
 
                             </ul>
                         </div>
                     </li>
-                    
-    <!--                    <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Gestion de Entradas</a>
+
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Semestre</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="page-404.html">Crear Cliente</a>
-                                </li>
-                                <li><a href="page-404.html">Ver Clientes</a>
-                                </li>
-                                <li><a href="page-404.html">Asistencias</a>
+                                <li><a href="page-crear-semestre.php">Crear Nuevo semestre</a>
+                                </li>                                        
+                                <li><a href="page-ver-semestres.php">Ver Semestres</a>
                                 </li>
                             </ul>
                         </div>
-                    </li>-->
+                    </li>
+
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Plan</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-plan.php">Crear Nuevo plan</a>
+                                </li>                                        
+                                <li><a href="page-ver-planes.php">Ver Planes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Cursos</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-curso.php">Crear Nuevo Curso</a>
+                                </li>                                        
+                                <li><a href="page-ver-cursos.php">Ver Cursos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Turnos</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-turno.php">Crear Nuevo Turno</a>
+                                </li>                                        
+                                <li><a href="page-ver-turnos.php">Ver Turnos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li class="li-hover"><div class="divider"></div></li>
@@ -165,28 +167,28 @@ if ('1' == $_SESSION['permisos']) {
             </li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
-                    <?php if ('2'== $_SESSION['permisos']) { ?>
+                    <?php if ('2' == $_SESSION['permisos']) { ?>
                         <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i>Gestion de Deposito</a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="page-ingreso-mercaderia.php">Ingreso de Licores</a>
-                                </li>
-                                <li><a href="page-salida-mercaderia.php">Salida de Licores</a>
-                                </li>
-                                <li><a href="page-inventario.php">Inventario</a>
-                                </li>
-                                <li class="divider"></li><li><a href="pedido-mes.php">Pedido Mensual</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="page-ver-ingresoMercaderia.php">Ver Ingreso Licores</a>
-                                </li>
-                                <li><a href="page-ver-salidaMercaderia.php">Ver Salidas Licores </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="page-crear-licor.php">Crear Nuevo Licor</a>
-                                </li>    
-                                <li><a href="page-ver-licores.php">Ver Licores</a>
-                                </li> 
+                                    </li>
+                                    <li><a href="page-salida-mercaderia.php">Salida de Licores</a>
+                                    </li>
+                                    <li><a href="page-inventario.php">Inventario</a>
+                                    </li>
+                                    <li class="divider"></li><li><a href="pedido-mes.php">Pedido Mensual</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="page-ver-ingresoMercaderia.php">Ver Ingreso Licores</a>
+                                    </li>
+                                    <li><a href="page-ver-salidaMercaderia.php">Ver Salidas Licores </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="page-crear-licor.php">Crear Nuevo Licor</a>
+                                    </li>    
+                                    <li><a href="page-ver-licores.php">Ver Licores</a>
+                                    </li> 
                                     </li>
                                 </ul>
                             </div>
@@ -221,7 +223,7 @@ if ('1' == $_SESSION['permisos']) {
                             </div>
                         </li>
                     <?php } ?>
-                    <?php if ('4'== $_SESSION['permisos']) { ?>
+                    <?php if ('4' == $_SESSION['permisos']) { ?>
                         <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-assignment"></i> Kardex</a>
                             <div class="collapsible-body">
                                 <ul>
@@ -254,18 +256,18 @@ if ('1' == $_SESSION['permisos']) {
 
                     <?php } ?>
                     <?php if ('2' == $_SESSION['permisos']) { ?>
-<!--                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Gestion de Entradas</a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="form-elements.html">Crear Cliente</a>
-                                    </li>
-                                    <li><a href="form-layouts.html">Ver Clientes</a>
-                                    </li>
-                                    <li><a href="form-layouts.html">Asistencias</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>-->
+                                                <!--                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Gestion de Entradas</a>
+                                                                            <div class="collapsible-body">
+                                                                                <ul>
+                                                                                    <li><a href="form-elements.html">Crear Cliente</a>
+                                                                                    </li>
+                                                                                    <li><a href="form-layouts.html">Ver Clientes</a>
+                                                                                    </li>
+                                                                                    <li><a href="form-layouts.html">Asistencias</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </li>-->
 
                     <?php } ?>
 
