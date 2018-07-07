@@ -80,33 +80,55 @@ if (!isset($_SESSION['usuario'])) {
                                             <div class="container">
                                                 <!--DataTables example-->
                                                 <div id="table-datatables">
-                                                    <h4 class="header">Reportes:</h4>
+                                                    <h4 class="header">Reportes Estudiantes:</h4>
                                                     <div class="row">
 
                                                         <div class="col s12 m12 l12">
                                                             <table id="data-table-simple" class="responsive-table display " cellspacing="0">
                                                                 <tr>
                                                                     <td align="center" colspan="2"> 
-                                                                        <strong>EXPORTAR REPORTES DE ALUMNOS </strong>
+                                                                        <center>
+                                                                        <strong>EXPORTAR REPORTES DE ESTUDIANTES </strong>
+                                                                        </center>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td> EXPORTAR REPORTE DE ALUMNOS EN PDF </td>
+                                                                    <td> EXPORTAR REPORTE DE ESTUDIANTES EN PDF </td>
                                                                     <td><a href="reporteAlumnos_pdf.php"><img src="images/pdf.png" width="30" height="25"></a> </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td> EXPORTAR REPORTE DE ALUMNOS EN EXCEL </td>
+                                                                    <td> EXPORTAR REPORTE DE ESTUDIANTES EN EXCEL </td>
                                                                     <td><a href="reporteAlumnos_excel.php"><img src="images/excel.png" width="30" height="25"></a> </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td> EXPORTAR REPORTE DE ALUMNOS EN WORD </td>
+                                                                    <td> EXPORTAR REPORTE DE ESTUDIANTES EN WORD </td>
                                                                     <td><a href="reporteAlumnos_word.php"><img src="images/word.png" width="30" height="25"></a> </td>
                                                                 </tr>
                                                             </table>
                                                         </div>
                                                     </div>
                                                 </div> 
+                                                
+                                                <li class="divider"></li>
+                                                
+                                                <div id="table-datatables">
+                                                    <h4 class="header">Reportes Docentes:</h4>
+                                                    <div class="row">
 
+                                                        <div class="col s12 m12 l12">
+                                                            <table id="data-table-simple" class="responsive-table display " cellspacing="0">
+                                                                <tr>
+                                                                    <td align="center" colspan="2"> 
+                                                                        <center>
+                                                                        <strong>EXPORTAR REPORTES DE DOCENTES </strong>
+                                                                        </center>
+                                                                    </td>
+                                                                </tr>
+                                                                
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div> 
                                             </div>
                                         </div>
                                     </div>
