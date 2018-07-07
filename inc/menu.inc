@@ -132,6 +132,27 @@ if ('1' == $_SESSION['permisos']) {
                             </ul>
                         </div>
                     </li>
+                    
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Grupos</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-crear-grupo.php">Crear Nuevo Grupo</a>
+                                </li>                                        
+                                <li><a href="page-ver-grupos.php">Ver Grupos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>REPORTES</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="page-ver-reportes.php">Ver Reportes</a>
+                                </li>                                        
+                                
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li class="li-hover"><div class="divider"></div></li>
