@@ -145,6 +145,26 @@ if (!isset($_SESSION['usuario'])) {
                                                                     <td><a href="reporteCursos_word.php"><img src="images/word.png" width="30" height="25"></a> </td>
                                                                 </tr>
                                                                 
+                                                                <tr>
+                                                                    <td align="center" colspan="2"> 
+                                                                        <center>
+                                                                        <strong>EXPORTAR REPORTES DE CURSO-GRUPO-DOCENTE </strong>
+                                                                        </center>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> EXPORTAR REPORTE DE CURSO-GRUPO-DOCENTE EN PDF </td>
+                                                                    <td><a href="reporteGrupos_pdf.php"><img src="images/pdf.png" width="30" height="25"></a> </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> EXPORTAR REPORTE DE CURSO-GRUPO-DOCENTE EN EXCEL </td>
+                                                                    <td><a href="reporteGrupos_excel.php"><img src="images/excel.png" width="30" height="25"></a> </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> EXPORTAR REPORTE DE CURSO-GRUPO-DOCENTE EN WORD </td>
+                                                                    <td><a href="reporteGrupos_word.php"><img src="images/word.png" width="30" height="25"></a> </td>
+                                                                </tr>
+                                                                
                                                             </table>
                                                         </div>
                                                     </div>
