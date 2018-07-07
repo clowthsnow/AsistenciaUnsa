@@ -176,28 +176,7 @@ if (!isset($_SESSION['usuario'])) {
                             </div>
 
                         </div>
-                        <!--end container-->
-                        <!--modal correcto-->
-                        <div id="modal1" class="modal">
-                            <div class="modal-content">
-                                <h4 class="red-text">ERROR!!!</h4>
-                                <p>Plan no encontrado en la base de datos</p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="page-ver-plan.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                            </div>
-                        </div>
-                        <!--modal eliminar-->
-                        <div id="modal2" class="modal">
-                            <div class="modal-content">
-                                <h4 class="red-text">ELIMINAR!!!</h4>
-                                <p>¿Desea eliminar este plan?</p>
-                            </div>
-                            <div class="modal-footer">                                
-                                <a href="#!" id="cancelar" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
-                                <a href="#!" id="eliminar" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                            </div>
-                        </div>
+                        
                     </section>
                     <!-- END CONTENT -->
 
@@ -241,39 +220,7 @@ if (!isset($_SESSION['usuario'])) {
             <!--plugins.js - Some Specific JS codes for Plugin Settings-->
             <script type="text/javascript" src="js/plugins.js"></script>
 
-            <script>
-                $(document).ready(function () {
-                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-                    $('#modal1').modal();
-                    $('#modal2').modal();
-                });
-                var href;
-                $('.delete').click(function (evt) {
-                    evt.preventDefault();
-                    $('#modal2').openModal();
-                    href = $(this).attr('href');
-                });
-
-                $('#eliminar').click(function (ev) {
-                    ev.preventDefault();
-
-                    $.ajax({
-                        type: "GET",
-                        url: href,
-                        success: function (respuesta) {
-
-                            if (respuesta == 1) {
-                                location.reload(true);
-                                //$('#modal1').openModal();
-                            } else {
-
-                                $('#modal1').openModal();
-                            }
-                        }
-                    });
-                });
-            </script>
-
+            
         </body>
 
     </html>

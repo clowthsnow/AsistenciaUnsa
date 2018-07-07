@@ -8,8 +8,8 @@ if (!isset($_SESSION['usuario'])) {
     include 'conexion.php';
     date_default_timezone_set('America/Lima');
     $fecha = new DateTime();
-
-    $id = $_GET['id'];
+    $fecha = $fecha->format('Y-m-d');
+    $id = $_GET['id'];//grupoId
 
     if (!isset($id)) {
         header("location:../page-ver-grupos.php");
@@ -31,12 +31,13 @@ if (!isset($_SESSION['usuario'])) {
         header("location:page-ver-grupos.php");
     }
     $res = $cursodetalle->fetch_assoc();
+    
     ?>
     <!DOCTYPE html>
     <html lang="es">
 
-        <head onload="ocultar()">
-            <title>Asignar Alumnos</title>
+        <head >
+            <title>Asistencia Alumnos</title>
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <!-- Favicons-->
@@ -55,7 +56,7 @@ if (!isset($_SESSION['usuario'])) {
 
         </head>
 
-        <body onload="ocultar()">
+        <body >
 
             <!-- //////////////////////////////////////////////////////////////////////////// -->
 
@@ -115,7 +116,7 @@ if (!isset($_SESSION['usuario'])) {
                                                         <div class="row">
                                                             <form id="create" class="col s12" action="control/asistenciaAlumno.php" method="POST">
                                                                 <input type="text" hidden="true" name="cursodetid" id="cursodetid" value="<?php echo $id; ?>">
-                                                                <input type="text" hidden="true" name="fecha" id="fecha" value="<?php echo $fecha->format('Y-m-d'); ?>">
+                                                                <input type="text" hidden="true" name="fecha" id="fecha" value="<?php echo $fecha; ?>">
 
                                                                 <br>
                                                                 <br>
@@ -149,13 +150,26 @@ if (!isset($_SESSION['usuario'])) {
                                                                                 while ($row = $cursodetalle2->fetch_assoc()) {
                                                                                     echo "<tr>
                                                                         <td data-codigo=" . $row['CursoEstudianteId'] . " id=\"alumno" . $cont . "\">" . $row['EstudianteCui'] . "</td>
-                                                                                <td>" . $row['EstudianteApellido'] . " " . $row['EstudianteNombre'] . "</td>"
-                                                                                    . "<td>  <input type=\"checkbox\" name=\"asistencia[]\" value=\"" . $row['CursoEstudianteId'] . "\" id=\"" . $row['CursoEstudianteId'] . "\" checked><label for=\"" . $row['CursoEstudianteId'] . "\" ></label></td>";
+                                                                                <td>" . $row['EstudianteApellido'] . " " . $row['EstudianteNombre'] . "</td>";
 
-//
-//                                                                                    echo "<td><a href=\"page-configurar-plan.php?id=" . $row['PlanId'] . "\"><span class=\"task-cat cyan\">Configurar</span></a></td>
-//                                                                        <td><a href=\"control/eliminarPlan.php?id=" . $row['PlanId'] . "\" class=\"delete\"><span class=\"task-cat red\">Eliminar</span></a></td>
-//                                                                        </tr>";
+                                                                                    $idasi=$row['CursoEstudianteId'];
+                                                                                    $buscarA = "SELECT * FROM asistenciaestudiante "
+                                                                                            . "WHERE AsistenciaEstudianteCursoEst='$idasi' AND AsistenciaEstudianteFecha='$fecha' ";
+
+                                                                                    $resultadoA = $conexion->query($buscarA) or die($conexion->error);
+//    if ($row = $discoB->fetch_assoc()) {
+//        
+//    }
+                                                                                    if ($resultadoA->num_rows === 0) {
+//                                                                                        echo $buscarA;
+                                                                                        echo "<td>  <input type=\"checkbox\" name=\"asistencia[]\" value=\"" . $row['CursoEstudianteId'] . "\" id=\"" . $row['CursoEstudianteId'] . "\" checked><label for=\"" . $row['CursoEstudianteId'] . "\" ></label></td>";
+                                                                                    } else {
+                                                                                        $res = $resultadoA->fetch_assoc();
+//                                                                                        var_dump($res);
+                                                                                        echo "<td>  <input type=\"checkbox\" name=\"asistencia[]\" value=\"" . $row['CursoEstudianteId'] . "\" id=\"" . $row['CursoEstudianteId'] . "\"";if($res['AsistenciaEstudianteAsistencia']=='1'){echo" checked";}echo "><label for=\"" . $row['CursoEstudianteId'] . "\" ></label></td>";
+                                                                                    }
+
+//                                                                                    
                                                                                     $cont++;
                                                                                 }
 //                                                                                
@@ -180,7 +194,7 @@ if (!isset($_SESSION['usuario'])) {
                                                                         </button>
                                                                     </div>
                                                                     <div class="input-field col s12 l6 m6">
-                                                                        <a class="btn red waves-effect waves-light right"  onclick="cancelar()" >Cancelar
+                                                                        <a class="btn red waves-effect waves-light right" href="page-ver-grupos.php" >Cancelar
                                                                             <i class="mdi-content-save left"></i>
                                                                         </a>
                                                                     </div>
@@ -205,7 +219,7 @@ if (!isset($_SESSION['usuario'])) {
                             <div id="modal1" class="modal">
                                 <div class="modal-content">
                                     <h4 class="red-text">ERROR!!!</h4>
-                                    <p>Intente de nuevo</p>
+                                    <p>Asistecia Marcada</p>
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
@@ -267,39 +281,39 @@ if (!isset($_SESSION['usuario'])) {
             <script type="text/javascript" src="js/plugins.js"></script>
 
             <script>
-                                                                            var contador = <?php echo $cont; ?>;
+            var contador = <?php echo $cont; ?>;
 
-                                                                            $(document).ready(function () {
+            $(document).ready(function () {
 
-                                                                                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 
-                                                                                $('#modal2').modal();
-                                                                                $('#modal1').modal();
-                                                                            });
-
-
+                $('#modal2').modal();
+                $('#modal1').modal();
+            });
 
 
 
-                                                                            var frm = $('#create');
 
-                                                                            frm.submit(function (ev) {
-                                                                                ev.preventDefault();
-                                                                                $.ajax({
-                                                                                    type: frm.attr('method'),
-                                                                                    url: frm.attr('action'),
-                                                                                    data: frm.serialize(),
-                                                                                    success: function (respuesta) {
-                                                                                        if (respuesta == 1) {
-                                                                                            $('#modal2').openModal();
-                                                                                            //document.location.href = "page-crear-proveedor.php";
-                                                                                        } else {
 
-                                                                                            $('#modal1').openModal();
-                                                                                        }
-                                                                                    }
-                                                                                });
-                                                                            });
+            var frm = $('#create');
+
+            frm.submit(function (ev) {
+                ev.preventDefault();
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: frm.attr('action'),
+                    data: frm.serialize(),
+                    success: function (respuesta) {
+                        if (respuesta == 1) {
+                            $('#modal2').openModal();
+                            //document.location.href = "page-crear-proveedor.php";
+                        } else {
+
+                            $('#modal1').openModal();
+                        }
+                    }
+                });
+            });
 
 
 

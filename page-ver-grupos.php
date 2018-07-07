@@ -133,7 +133,9 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <td>" , $row['AulaUbicacion']." ".$row['AulaNumero']."</td>";
                                                                         
                                                                         
-                                                                        echo "<td><a href=\"page-asistencia-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat green\">Asistencia</span></a></td>"
+                                                                        echo "<td><a href=\"page-asistencia-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat green\">Alumnos</span></a>&nbsp"
+                                                                                . "<a href=\"control/asistenciaDocente.php?id=" . $row['CursoDetalleId'] . "\" class=\"asistenciad\"><span class=\"task-cat green\">Docente</span></a>&nbsp"
+                                                                                . "<a href=\"page-ver-asistencias.php?id=" . $row['CursoDetalleId'] . "\" ><span class=\"task-cat blue\">Ver</span></a></td>"
                                                                                 . " <td><a href=\"page-asignar-alumnos.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat orange\">Asignar</span></a></td>"
                                                                                 . "<td><a href=\"page-configurar-plan.php?id=" . $row['CursoDetalleId'] . "\"><span class=\"task-cat cyan\">Configurar</span></a></td>
                                                                         <td><a href=\"control/eliminarPlan.php?id=" . $row['CursoDetalleId'] . "\" class=\"delete\"><span class=\"task-cat red\">Eliminar</span></a></td>
@@ -161,7 +163,7 @@ if (!isset($_SESSION['usuario'])) {
                                 <p>Plan no encontrado en la base de datos</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="page-ver-plan.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                <a href="page-ver-grupos.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                         <!--modal eliminar-->
@@ -173,6 +175,16 @@ if (!isset($_SESSION['usuario'])) {
                             <div class="modal-footer">                                
                                 <a href="#!" id="cancelar" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
                                 <a href="#!" id="eliminar" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                            </div>
+                        </div>
+                         <!--modal asistencia-->
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+                                <h4 class="green-text">ASISTENCIA</h4>
+                                <p>Asistencia del Docente Registrada</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="page-ver-grupos.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                     </section>
@@ -223,6 +235,7 @@ if (!isset($_SESSION['usuario'])) {
                     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
                     $('#modal1').modal();
                     $('#modal2').modal();
+                    $('#modal3').modal();
                 });
                 var href;
                 $('.delete').click(function (evt) {
@@ -245,6 +258,26 @@ if (!isset($_SESSION['usuario'])) {
                             } else {
 
                                 $('#modal1').openModal();
+                            }
+                        }
+                    });
+                });
+                
+                var href2;
+                $('.asistenciad').click(function (evt) {
+                    evt.preventDefault();
+                    href2 = $(this).attr('href');
+                    $.ajax({
+                        type: "GET",
+                        url: href2,
+                        success: function (respuesta) {
+
+                            if (respuesta == 1) {
+                                  $('#modal3').openModal();
+                                //$('#modal1').openModal();
+                            } else {
+
+                              
                             }
                         }
                     });
