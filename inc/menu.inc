@@ -20,17 +20,6 @@ if ('1' == $_SESSION['permisos']) {
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
 
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Facultad</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-facultad.php">Crear Facultad</a>
-                                </li>                                        
-                                <li><a href="page-ver-facultad.php">Ver Facultad</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Escuela</a>
                         <div class="collapsible-body">
                             <ul>
@@ -46,28 +35,28 @@ if ('1' == $_SESSION['permisos']) {
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Usuarios</a>
                         <div class="collapsible-body">
                             <ul>
-                                
+
                                 <li><a href="page-crear-director.php">Crear Nuevo Director</a>
                                 </li>                                        
                                 <li><a href="page-ver-director.php">Ver Director</a>
                                 </li>
-                                
+
                                 <li class="divider"></li>
-                                
+
                                 <li><a href="page-crear-secretaria.php">Crear Nueva Secretaria</a>
                                 </li>                                        
                                 <li><a href="page-ver-secretaria.php">Ver Secretaria</a>
                                 </li>
-                                
+
                                 <li class="divider"></li>
-                                
+
                                 <li><a href="page-crear-docente.php">Crear Nuevo Docente</a>
                                 </li>                                        
                                 <li><a href="page-ver-docentes.php">Ver Docente</a>
                                 </li>
-                                
+
                                 <li class="divider"></li>
-                                
+
                                 <li><a href="page-crear-estudiante.php">Crear Nuevo Estudiante</a>
                                 </li>                                        
                                 <li><a href="page-ver-estudiantes.php">Ver Estudiante</a>
@@ -118,13 +107,12 @@ if ('1' == $_SESSION['permisos']) {
                                 </li>                                        
                                 <li><a href="page-ver-cursos.php">Ver Cursos</a>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Turnos</a>
-                        <div class="collapsible-body">
-                            <ul>
+                                <li class="divider"></li>
+                                <li><a href="page-crear-grupo.php">Crear Nuevo Grupo</a>
+                                </li>                                        
+                                <li><a href="page-ver-grupos.php">Ver Grupos</a>
+                                </li>
+                                <li class="divider"></li>
                                 <li><a href="page-crear-turno.php">Crear Nuevo Turno</a>
                                 </li>                                        
                                 <li><a href="page-ver-turnos.php">Ver Turnos</a>
@@ -132,24 +120,13 @@ if ('1' == $_SESSION['permisos']) {
                             </ul>
                         </div>
                     </li>
-                    
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>Gestion de Grupos</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="page-crear-grupo.php">Crear Nuevo Grupo</a>
-                                </li>                                        
-                                <li><a href="page-ver-grupos.php">Ver Grupos</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    
+
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-box"></i>REPORTES</a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="page-ver-reportes.php">Ver Reportes</a>
                                 </li>                                        
-                                
+
                             </ul>
                         </div>
                     </li>
@@ -277,18 +254,18 @@ if ('1' == $_SESSION['permisos']) {
 
                     <?php } ?>
                     <?php if ('2' == $_SESSION['permisos']) { ?>
-                                                <!--                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Gestion de Entradas</a>
-                                                                            <div class="collapsible-body">
-                                                                                <ul>
-                                                                                    <li><a href="form-elements.html">Crear Cliente</a>
-                                                                                    </li>
-                                                                                    <li><a href="form-layouts.html">Ver Clientes</a>
-                                                                                    </li>
-                                                                                    <li><a href="form-layouts.html">Asistencias</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </li>-->
+                                                                <!--                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Gestion de Entradas</a>
+                                                                                            <div class="collapsible-body">
+                                                                                                <ul>
+                                                                                                    <li><a href="form-elements.html">Crear Cliente</a>
+                                                                                                    </li>
+                                                                                                    <li><a href="form-layouts.html">Ver Clientes</a>
+                                                                                                    </li>
+                                                                                                    <li><a href="form-layouts.html">Asistencias</a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </li>-->
 
                     <?php } ?>
 

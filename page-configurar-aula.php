@@ -132,7 +132,7 @@ if (!isset($_SESSION['usuario'])) {
                                                                                                                              
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="ubi" type="text" class="validate" name="ubicacionaula" required="" value="<?php echo $provBD['AulaUbiacion']; ?>">
+                                                                        <input id="ubi" type="text" class="validate" name="ubicacionaula" required="" value="<?php echo $provBD['AulaUbicacion']; ?>">
                                                                         <label class="active" for="ubi">Ubicacion:</label>
                                                                     </div>
                                                                 </div>
