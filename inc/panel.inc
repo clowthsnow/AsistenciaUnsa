@@ -1,24 +1,25 @@
 <?php
-if ('1'== $_SESSION['permisos']) {
+if ('1' == $_SESSION['permisos']) {
     ?>
     <p class="caption">Accesos Directos</p>
 
     <div class="divider"></div>
     <div id="basic-card" class="section">
         <div class="row">
+
             <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
-                        <span class="card-title">Usuarios</span>
-                        <p>Crea u observa los usuarios que van a usar el sistema</p>
+                        <span class="card-title">Escuela</span>
+                        <p>Crea u observa a la escuela.</p>
                     </div>
                     <div class="card-action">
-                        <a href="page-crear-usuario.php" class="lime-text text-accent-1">Crear Usuario</a>
-                        <a href="page-ver-usuarios.php" class="lime-text text-accent-1">Ver Usuarios</a>
+                        <a href="page-crear-escuela.php" class="lime-text text-accent-1">Crear Escuela</a>
+                        <a href="page-ver-escuela.php" class="lime-text text-accent-1">Ver Escuela</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
@@ -31,9 +32,9 @@ if ('1'== $_SESSION['permisos']) {
                     </div>
                 </div>
             </div>
-            
-                        
-             <div class="col s6 m4 l4">
+
+
+            <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
                         <span class="card-title">Secretaria</span>
@@ -49,16 +50,29 @@ if ('1'== $_SESSION['permisos']) {
             <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
-                        <span class="card-title">Escuela</span>
-                        <p>Crea u observa a la escuela.</p>
+                        <span class="card-title">Docentes</span>
+                        <p>Crea u observa al doncete de la escuela.</p>
                     </div>
                     <div class="card-action">
-                        <a href="page-crear-escuela.php" class="lime-text text-accent-1">Crear Escuela</a>
-                        <a href="page-ver-escuela.php" class="lime-text text-accent-1">Ver Escuela</a>
+                        <a href="page-crear-docente.php" class="lime-text text-accent-1">Crear Docente</a>
+                        <a href="page-ver-docentes.php" class="lime-text text-accent-1">Ver Docente</a>
                     </div>
                 </div>
             </div>
             
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Estudiantes</span>
+                        <p>Crea u observa al estudiantes de la escuela.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-estudiante.php" class="lime-text text-accent-1">Crear Estud</a>
+                        <a href="page-ver-estudiantes.php" class="lime-text text-accent-1">Ver Estudiantes</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="col s6 m4 l4">
                 <div class="card  light-blue">
                     <div class="card-content white-text">
@@ -71,8 +85,85 @@ if ('1'== $_SESSION['permisos']) {
                     </div>
                 </div>
             </div>
+
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Semestre</span>
+                        <p>Crea u observa al semestre.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-semestre.php" class="lime-text text-accent-1">Crear Semestre</a>
+                        <a href="page-ver-semestres.php" class="lime-text text-accent-1">Ver Semestre</a>
+                    </div>
+                </div>
+            </div>
             
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Semestre</span>
+                        <p>Crea u observa al semestre.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-semestre.php" class="lime-text text-accent-1">Crear Semestre</a>
+                        <a href="page-ver-semestres.php" class="lime-text text-accent-1">Ver Semestre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Plan</span>
+                        <p>Crea u observa al planes de estudio.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-plan.php" class="lime-text text-accent-1">Crear Plan Estudios</a>
+                        <a href="page-ver-planes.php" class="lime-text text-accent-1">Ver planes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Cursos</span>
+                        <p>Crea u observa los cursos.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-curso.php" class="lime-text text-accent-1">Crear Cursos</a>
+                        <a href="page-ver-cursos.php" class="lime-text text-accent-1">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
             
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">Turno</span>
+                        <p>Crea u observa los turnos.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-turno.php" class="lime-text text-accent-1">Crear Turno</a>
+                        <a href="page-ver-turnos.php" class="lime-text text-accent-1">Ver turnos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s6 m4 l4">
+                <div class="card  light-blue">
+                    <div class="card-content white-text">
+                        <span class="card-title">GRUPOS</span>
+                        <p>Crea u observa los grupos.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="page-crear-grupo.php" class="lime-text text-accent-1">Crear GRUPO</a>
+                        <a href="page-ver-grupos.php" class="lime-text text-accent-1">Ver GRUPOS</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <?php
     } else {
@@ -182,7 +273,7 @@ if ('1'== $_SESSION['permisos']) {
                     </div>
 
                 <?php } ?>
-                <?php if ('4'== $_SESSION['permisos']) { ?>
+                <?php if ('4' == $_SESSION['permisos']) { ?>
 
 
 
@@ -227,7 +318,7 @@ if ('1'== $_SESSION['permisos']) {
                     </div>
 
                 <?php } ?>
-                <?php if ('2'== $_SESSION['permisos']) { ?>
+                <?php if ('2' == $_SESSION['permisos']) { ?>
 
 
                 <?php } ?>
