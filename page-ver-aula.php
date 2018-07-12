@@ -116,7 +116,7 @@ if (!isset($_SESSION['usuario'])) {
                                                                         <td>" . $row['AulaId'] . "</td>
                                                                         <td>" . $row['AulaEscuela'] . "</td>                                                                       
                                                                         <td>" . $row['AulaNumero'] . "</td>
-                                                                        <td>" . $row['AulaUbicacion'] . "</td>";
+                                                                        <td>" . $row['AulaUbiacion'] . "</td>";
                                                                         
                                                                         
                                                                         echo "<td><a href=\"page-configurar-aula.php?id=" . $row['AulaId'] . "\"><span class=\"task-cat cyan\">Configurar</span></a></td>

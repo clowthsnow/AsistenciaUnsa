@@ -14,7 +14,7 @@ if (!isset($escuela) ||  !isset($numero)|| !isset($ubicacion)) {
     header("location:../page-crear-aula.php");
 }
 
-$insertar="INSERT INTO aula( AulaEscuela, AulaNumero, AulaUbicacion) VALUES ('$escuela','$numero','$ubicacion')";
+$insertar="INSERT INTO aula( AulaEscuela, AulaNumero, AulaUbiacion) VALUES ('$escuela','$numero','$ubicacion')";
 
 if($conexion->query($insertar)==TRUE){
     echo '1';

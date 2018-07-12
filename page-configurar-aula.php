@@ -132,7 +132,7 @@ if (!isset($_SESSION['usuario'])) {
                                                                                                                              
                                                                 <div class="row">
                                                                     <div class="input-field col s12">
-                                                                        <input id="ubi" type="text" class="validate" name="ubicacionaula" required="" value="<?php echo $provBD['AulaUbicacion']; ?>">
+                                                                        <input id="ubi" type="text" class="validate" name="ubicacionaula" required="" value="<?php echo $provBD['AulaUbiacion']; ?>">
                                                                         <label class="active" for="ubi">Ubicacion:</label>
                                                                     </div>
                                                                 </div>
@@ -170,7 +170,7 @@ if (!isset($_SESSION['usuario'])) {
                                 <p> Escuela modificada correctamente.</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="page-ver-escuela.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                <a href="page-ver-aula.php" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                         <!--modal error-->
